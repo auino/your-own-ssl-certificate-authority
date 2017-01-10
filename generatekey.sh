@@ -1,5 +1,9 @@
 #!/bin/bash
 
+###########################
+### CONFIGURATION BEGIN ###
+###########################
+
 # Certificates information
 
 DATA_COUNTRYCODE=IT
@@ -10,6 +14,10 @@ DATA_EMAIL='me@myorganization.org'
 
 BITS=4096
 DAYS=3650 # 10 years
+
+###########################
+###  CONFIGURATION END  ###
+###########################
 
 # Input arguments check
 if [ $# -ne 1 ] && [ $# -ne 2 ]; then
