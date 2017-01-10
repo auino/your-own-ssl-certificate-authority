@@ -1,5 +1,6 @@
 #!/bin/bash
-# from: http://security.stackexchange.com/questions/89319/creating-my-own-ca-for-an-intranet
+
+# Certificates information
 
 DATA_COUNTRYCODE=IT
 DATA_COUNTRY=Italy
