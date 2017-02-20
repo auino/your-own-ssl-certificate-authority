@@ -42,7 +42,7 @@ cd certs
 
 # Create a new SSL key
 #openssl genrsa -aes256 -out $name.key $BITS
-openssl genrsa -out $name.key $BITS
+openssl genrsa -out $name.key $BITS -days $DAYS
 
 # Creating certificate subject data
 SUBJECTDATA="/C=${DATA_COUNTRYCODE}/ST=${DATA_COUNTRY}/L=${DATA_LOCATION}/O=${DATA_ORGANIZATION}/emailAddress=${DATA_EMAIL}"
@@ -62,10 +62,10 @@ fi
 SUBJECTDATA="${SUBJECTDATA}/CN=$host"
 
 # Use that key to generate a request
-openssl req -new -key $name.key -out $name.req -subj "$SUBJECTDATA"
+openssl req -new -key $name.key -out $name.req -subj "$SUBJECTDATA" -days $DAYS
 
 # Sign that request to generate a new cert
-openssl x509 -req -in $name.req -out $name.cer -CA root.cer -CAkey root.key  -sha256 -CAcreateserial
+openssl x509 -req -in $name.req -out $name.cer -CA root.cer -CAkey root.key -days $DAYS -sha256 -CAcreateserial
 
 # Going back to main directory
 cd ..
