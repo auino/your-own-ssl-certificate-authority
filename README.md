@@ -2,7 +2,7 @@
 
 ### Description ###
 
-This program (based on the answers received to [a StackExchange question](http://security.stackexchange.com/questions/89319/creating-my-own-ca-for-an-intranet) allows you to easily set up an internal SSL certificate authority.
+This program (based on the answers received to [a StackExchange question](http://security.stackexchange.com/questions/89319/creating-my-own-ca-for-an-intranet)) allows you to easily set up an internal SSL certificate authority.
 
 By using a single `root` certificate, it is possible to configure the client to consider such certificate, plus all the "sub/derived certificates", valid.
 In this way, it is possible to configure the client to accept a single certificate.
