@@ -67,6 +67,9 @@ openssl req -new -key $name.key -out $name.req -subj "$SUBJECTDATA" -days $DAYS
 # Sign that request to generate a new cert
 openssl x509 -req -in $name.req -out $name.cer -CA root.cer -CAkey root.key -days $DAYS -sha256 -CAcreateserial
 
+# Generate pfx file
+openssl pkcs12 -export -out $name.pfx -inkey $name.key -in $name.cer
+
 # Going back to main directory
 cd ..
 
